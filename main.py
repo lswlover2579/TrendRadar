@@ -21,7 +21,7 @@ CONFIG = {
     "USE_PROXY": True,  # 是否启用代理
     "DEFAULT_PROXY": "http://127.0.0.1:10086",
     "CONTINUE_WITHOUT_FEISHU": True,  # 控制在没有飞书 webhook URL 时是否继续执行爬虫, 如果 True ,会依然进行爬虫行为，并在 github 上持续的生成爬取的新闻数据
-    "FEISHU_WEBHOOK_URL": "${{ secrets.FEISHU_WEBHOOK_URL }}",  # 飞书机器人的 webhook URL，大概长这样：https://www.feishu.cn/flow/api/trigger-webhook/xxxx， 默认为空，推荐通过GitHub Secrets设置
+    "FEISHU_WEBHOOK_URL": "{ secrets.FEISHU_WEBHOOK_URL }",  # 飞书机器人的 webhook URL，大概长这样：https://www.feishu.cn/flow/api/trigger-webhook/xxxx， 默认为空，推荐通过GitHub Secrets设置
 }
 
 
