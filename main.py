@@ -1532,7 +1532,7 @@ class ReportGenerator:
             _blank,real_text = text_content.spilt('本次新增热点新闻')
             real_text = '本次新增热点新闻\n' + real_text
         else:
-            real_text = '暂无新热点'
+            real_text = ''
         return real_text
 
     @staticmethod
@@ -1836,7 +1836,7 @@ class ReportGenerator:
             _blank,real_text = text_content.spilt('本次新增热点新闻')
             real_text = '本次新增热点新闻\n' + real_text
         else:
-            real_text = '暂无新热点'
+            real_text = ''
         return real_text
         # return text_content
 
@@ -2228,17 +2228,12 @@ class NewsAnalyzer:
 
         ids = [
             ("toutiao", "今日头条"),
-            ("baidu", "百度热搜"),
             ("wallstreetcn-hot", "华尔街见闻"),
             ("thepaper", "澎湃新闻"),
-            ("bilibili-hot-search", "bilibili 热搜"),
             ("cls-hot", "财联社热门"),
-            ("ifeng", "凤凰网"),
-            "tieba",
-            "weibo",
-            "douyin",
-            "zhihu",
+            
         ]
+        # ("ifeng", "凤凰网"), "tieba", "weibo", "douyin", "zhihu",("baidu", "百度热搜"),("bilibili-hot-search", "bilibili 热搜"),
 
         print(f"开始爬取数据，请求间隔 {self.request_interval} 毫秒")
         FileHelper.ensure_directory_exists("output")
