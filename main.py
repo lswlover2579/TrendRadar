@@ -1528,8 +1528,12 @@ class ReportGenerator:
         # 版本更新提示
         if update_info:
             text_content += f"\n<font color='grey'>TrendRadar 发现新版本 {update_info['remote_version']}，当前 {update_info['current_version']}</font>"
-
-        return text_content
+        if text_content and '本次新增热点新闻' in text_content:
+            _blank,real_text = text_content.spilt('本次新增热点新闻')
+            real_text = '本次新增热点新闻\n' + real_text
+        else:
+            real_text = '暂无新热点'
+        return real_text
 
     @staticmethod
     def _render_dingtalk_content(
@@ -1626,8 +1630,15 @@ class ReportGenerator:
         # 版本更新提示
         if update_info:
             text_content += f"\n> TrendRadar 发现新版本 **{update_info['remote_version']}**，当前 **{update_info['current_version']}**"
-
-        return text_content
+            
+        if text_content and '本次新增热点新闻' in text_content:
+            _blank,real_text = text_content.spilt('本次新增热点新闻')
+            real_text = '本次新增热点新闻\n' + real_text
+        else:
+            real_text = '暂无新热点'
+        return real_text
+        
+        # return text_content
 
     @staticmethod
     def _render_wework_content(
@@ -1821,8 +1832,13 @@ class ReportGenerator:
         # 版本更新提示
         if update_info:
             text_content += f"\n<i>TrendRadar 发现新版本 <b>{update_info['remote_version']}</b>，当前 <b>{update_info['current_version']}</b></i>"
-
-        return text_content
+        if text_content and '本次新增热点新闻' in text_content:
+            _blank,real_text = text_content.spilt('本次新增热点新闻')
+            real_text = '本次新增热点新闻\n' + real_text
+        else:
+            real_text = '暂无新热点'
+        return real_text
+        # return text_content
 
     @staticmethod
     def send_to_webhooks(
