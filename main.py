@@ -1529,7 +1529,7 @@ class ReportGenerator:
         if update_info:
             text_content += f"\n<font color='grey'>TrendRadar 发现新版本 {update_info['remote_version']}，当前 {update_info['current_version']}</font>"
         if text_content and '本次新增热点新闻' in text_content:
-            _blank,real_text = text_content.spilt('本次新增热点新闻')
+            _blank,real_text = text_content.split('本次新增热点新闻')
             real_text = '本次新增热点新闻\n' + real_text
         else:
             real_text = ''
@@ -1833,7 +1833,7 @@ class ReportGenerator:
         if update_info:
             text_content += f"\n<i>TrendRadar 发现新版本 <b>{update_info['remote_version']}</b>，当前 <b>{update_info['current_version']}</b></i>"
         if text_content and '本次新增热点新闻' in text_content:
-            _blank,real_text = text_content.spilt('本次新增热点新闻')
+            _blank,real_text = text_content.split('本次新增热点新闻')
             real_text = '本次新增热点新闻\n' + real_text
         else:
             real_text = ''
